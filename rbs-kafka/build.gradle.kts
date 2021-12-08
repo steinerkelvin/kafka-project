@@ -16,6 +16,10 @@ dependencies {
     testImplementation(kotlin("test"))
     // https://mvnrepository.com/artifact/org.apache.kafka/kafka
     implementation("org.apache.kafka:kafka_2.13:3.0.0")
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    implementation("org.slf4j:slf4j-api:1.7.32")
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+    implementation("org.slf4j:slf4j-simple:1.7.32")
 }
 
 tasks.test {
