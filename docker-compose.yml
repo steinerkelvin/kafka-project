@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  db-settings:
+    image: postgres
+    restart: unless-stopped
+    volumes:
+      - pg-data-settings:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+
+volumes:
+  pg-data-settings:

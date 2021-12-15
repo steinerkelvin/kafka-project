@@ -5,7 +5,7 @@ plugins {
     application
 }
 
-group = "com.kelvin-santos"
+group = "dev.kelvn"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -20,6 +20,9 @@ dependencies {
     implementation("org.slf4j:slf4j-api:1.7.32")
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
     implementation("org.slf4j:slf4j-simple:1.7.32")
+
+    implementation("org.postgresql:postgresql:42.3.1")
+    implementation("org.ktorm:ktorm-core:3.4.1")
 }
 
 tasks.test {

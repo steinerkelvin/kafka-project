@@ -1,7 +1,10 @@
 # TODO
 
-- Coleta de dados de temperatura no Kotlin
-- Producer de dados de temperatura
+- parametros de vacinas
+
+- Analyser
+  - persistencia de geolocalização
+  - cálculo de distâncias
 
 - App dos gestores
   - backend
@@ -19,4 +22,3 @@
 
 https://eng.uber.com/kafka/
 https://llamalab.com/automate/community/flows/3274
-
