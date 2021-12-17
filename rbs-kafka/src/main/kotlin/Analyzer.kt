@@ -1,4 +1,3 @@
-import model.sensors
 import java.util.*
 import java.time.Duration
 import org.slf4j.Logger
@@ -12,11 +11,11 @@ import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.kafka.common.serialization.StringSerializer
 
 import org.ktorm.database.Database
+import org.ktorm.entity.add
 
-data class SensorSettings(
-    val min_temp: Float,
-    val max_temp: Float,
-)
+import store.Vaccine
+import store.sensors
+import store.vaccines
 
 fun main(args: Array<String>) {
     val logger: Logger = LoggerFactory.getLogger("ANALYZER")
@@ -31,10 +30,17 @@ fun main(args: Array<String>) {
     )
     val bootstrap_server = "localhost:9092"
 
-//    val sensors: MutableMap<String, SensorSettings> = HashMap()
-//    sensors.set("test-sensor-1234", SensorSettings(25.0f, 29.0f))
-
     val sensors = database.sensors
+
+    val new_vaccine = Vaccine {
+        name = "pfaizer"
+        min_temp = 10.0
+        max_temp = 20.0
+    }
+
+    database.vaccines.add(new_vaccine)
+
+    // === //
 
     val producer_props = Properties()
     producer_props.setProperty(

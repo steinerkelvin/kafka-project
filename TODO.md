@@ -1,9 +1,11 @@
 # TODO
 
-- parametros de vacinas
+- parse de JSON no Kotlin
 
 - Analyser
-  - persistencia de geolocalização
+  - persistência de geolocalização
+    - criar tabela
+    - modelo ORM
   - cálculo de distâncias
 
 - App dos gestores
@@ -17,6 +19,10 @@
   - tela no web app
 
 - dashboard
+
+---
+
+- script para deploy-ar tabelas
 
 ---
 
