@@ -10,6 +10,9 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://packages.confluent.io/maven/")
+    }
 }
 
 dependencies {
@@ -21,6 +24,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.apache.kafka/kafka
     implementation("org.apache.kafka:kafka_2.13:3.0.0")
+
+    // https://mvnrepository.com/artifact/io.confluent/kafka-json-schema-serializer
+    implementation("io.confluent:kafka-json-schema-serializer:7.0.1")
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     implementation("com.fasterxml.jackson.core:jackson-databind:2.0.1")
 

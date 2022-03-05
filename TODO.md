@@ -1,12 +1,17 @@
+- sensor_data
+  - sensor_temp?
+  - sensor_geo?
+- manager_geo
+- alert
+
 # TODO
 
 - parse de JSON no Kotlin
 
 - Analyser
   - persistência de geolocalização
-    - criar tabela
-    - modelo ORM
   - cálculo de distâncias
+  - emissão de alertas
 
 - App dos gestores
   - backend

@@ -9,6 +9,7 @@ import org.apache.kafka.clients.producer.KafkaProducer
 import org.apache.kafka.clients.producer.ProducerConfig
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.kafka.common.serialization.StringSerializer
+import io.confluent.kafka.serializers.json.KafkaJsonSchemaSerializer
 
 import org.ktorm.database.Database
 import org.ktorm.entity.add
@@ -67,7 +68,8 @@ fun main(args: Array<String>) {
     )
     consumer_props.setProperty(
         ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
-        StringDeserializer::class.qualifiedName
+        // StringDeserializer::class.qualifiedName
+        KafkaJsonSchemaSerializer::class.qualifiedName
     )
     consumer_props.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "analyzers")
     consumer_props.setProperty(

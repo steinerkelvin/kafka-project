@@ -2,11 +2,12 @@ package ser
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
-class User(sensor_id: String, timestamp: Long, pos: Geo) {
+class VaccineEvent(sensor_id: String, timestamp: Long, pos: Geo) {
     @JsonProperty
     val sensor_id: String = sensor_id
     @JsonProperty
     val timestamp: Long = timestamp
+    // temperature
     @JsonProperty
     val pos: Geo = pos
 }

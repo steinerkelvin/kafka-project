@@ -31,6 +31,7 @@ def gen_arrays():
 
 
 if __name__ == "__main__":
+    # TODO: env vars
     bs_server = "localhost:9092"
     topic = "first-topic"
     time_interval = 1
@@ -39,14 +40,17 @@ if __name__ == "__main__":
     temp_arr, lat_arr, long_arr = gen_arrays()
 
     producer = KafkaProducer(bootstrap_servers=bs_server, value_serializer=lambda v: json.dumps(v).encode('utf-8'))
+
     for i in range(100):
         json_data = {
             'sensor_id': sensor_id,
-            'timestamp': temp_arr[i],
+            'timestamp': 000,   # TODO: ???
+            'temperature': temp_arr[i],
             'pos': {
                 'lat': lat_arr[i],
                 'long': long_arr[i]
             }
         }
+        # TODO: two topics
         producer.send(topic, json_data)
         time.sleep(time_interval)
